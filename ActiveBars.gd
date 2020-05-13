@@ -21,11 +21,11 @@ func _ready():
 	
 	var material = SpatialMaterial.new()
 	material.albedo_color = team_color
+	material.roughness = 0.2
 	
 	for bar in bars:
 		for child in bar.get_children():
 			if child is KinematicBody:
-
 				child.get_node("Mesh").set_surface_material(0, material)
 
 

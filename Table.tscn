@@ -20,6 +20,8 @@ radius = 1.2
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.647059, 0.796078, 0.690196, 1 )
+metallic = 0.35
+roughness = 0.33
 
 [node name="Table" type="Spatial"]
 

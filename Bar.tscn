@@ -16,9 +16,9 @@ shape = SubResource( 1 )
 [node name="CSGCylinder" type="CSGCylinder" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 radius = 0.6
-height = 140.0
+height = 160.0
 
 [node name="Handle" type="MeshInstance" parent="."]
-transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 75 )
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 84.534 )
 mesh = ExtResource( 1 )
 material/0 = null

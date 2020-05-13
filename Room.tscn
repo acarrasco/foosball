@@ -74,11 +74,9 @@ shadow_contact = 1.5
 spot_range = 300.0
 spot_angle = 15.0
 
-[node name="SpotLight0" type="SpotLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 200, 0 )
+[node name="Above" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 44.2516, 0 )
 light_energy = 0.5
 light_specular = 0.71
 shadow_enabled = true
 shadow_bias = 6.43
-spot_range = 250.0
-spot_angle = 23.7

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://handle.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="CylinderShape" id=1]
+margin = 0.01
+height = 2.78096
+
+[node name="Bar" type="KinematicBody"]
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 0.007, 0, 0, 0, -8.14603e-08, -0.008, 0, 0.5, -1.30337e-09, 0, 0, 0 )
+shape = SubResource( 1 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+radius = 0.7
+height = 140.0
+
+[node name="Handle" type="MeshInstance" parent="."]
+transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 75 )
+mesh = ExtResource( 1 )
+material/0 = null

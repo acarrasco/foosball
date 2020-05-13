@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Wood.tres" type="Material" id=1]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 5, 15, 17.5 )
+
+[sub_resource type="BoxShape" id=4]
+extents = Vector3( 5, 5, 12.5 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 5, 15, 45 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 5, 5, 12.5 )
+
+[node name="Goal" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.757855, 0, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CSGCombiner" type="CSGCombiner" parent="StaticBody"]
+operation = 2
+
+[node name="Wall" type="CSGBox" parent="StaticBody/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+width = 10.0
+height = 30.0
+depth = 95.0
+material = ExtResource( 1 )
+
+[node name="Hole" type="CSGBox" parent="StaticBody/CSGCombiner/Wall"]
+operation = 2
+width = 12.0
+height = 10.0
+depth = 25.0
+material = ExtResource( 1 )
+
+[node name="Back" type="CSGBox" parent="StaticBody/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0 )
+width = 1.0
+height = 30.0
+depth = 95.0
+material = ExtResource( 1 )
+
+[node name="Left" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
+shape = SubResource( 3 )
+
+[node name="Right" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -30 )
+shape = SubResource( 3 )
+
+[node name="Top" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
+shape = SubResource( 4 )
+
+[node name="Back" type="CollisionShape" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0 )
+shape = SubResource( 5 )
+
+[node name="ScoreDetector" type="Area" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485158, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="ScoreDetector"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 0 )
+shape = SubResource( 2 )

@@ -2,38 +2,33 @@
 
 [ext_resource path="res://field.png" type="Texture" id=1]
 
-[sub_resource type="PhysicsMaterial" id=3]
+[sub_resource type="PhysicsMaterial" id=1]
 rough = true
 
-[sub_resource type="SpatialMaterial" id=1]
+[sub_resource type="SpatialMaterial" id=2]
 albedo_color = Color( 0.0509804, 0.396078, 0.129412, 1 )
 albedo_texture = ExtResource( 1 )
-metallic = 0.09
-metallic_specular = 0.04
-roughness = 0.3
-ao_enabled = true
-ao_light_affect = 0.0
-ao_on_uv2 = false
-ao_texture_channel = 0
+metallic = 0.3
+metallic_specular = 0.2
+roughness = 0.37
 transmission_enabled = true
 transmission = Color( 0, 0, 0, 1 )
 
-[sub_resource type="BoxShape" id=2]
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 80, 5, 42.5 )
 
 [node name="Floor" type="Spatial"]
-transform = Transform( 1.01, 0, 0, 0, 1, 0, 0, 0, 1.01, 0, 0, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
-physics_material_override = SubResource( 3 )
+physics_material_override = SubResource( 1 )
 
 [node name="CSGBox" type="CSGBox" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
 width = 140.0
 height = 10.0
 depth = 85.0
-material = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )

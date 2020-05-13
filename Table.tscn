@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Side.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
@@ -10,12 +10,16 @@
 [ext_resource path="res://ActiveBars.gd" type="Script" id=8]
 [ext_resource path="res://Ball.gd" type="Script" id=9]
 
-[sub_resource type="PhysicsMaterial" id=2]
+[sub_resource type="PhysicsMaterial" id=1]
 friction = 2.0
 bounce = 0.5
 
-[sub_resource type="SphereShape" id=1]
-margin = 0.01
+[sub_resource type="SphereShape" id=2]
+margin = 0.02
+radius = 1.2
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.647059, 0.796078, 0.690196, 1 )
 
 [node name="Table" type="Spatial"]
 
@@ -59,23 +63,10 @@ radius = 4.0
 height = 80.0
 material = ExtResource( 4 )
 
-[node name="Ball" type="RigidBody" parent="."]
-transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
-input_ray_pickable = false
-mass = 0.2
-physics_material_override = SubResource( 2 )
-can_sleep = false
-script = ExtResource( 9 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Ball"]
-shape = SubResource( 1 )
-
-[node name="CSGSphere" type="CSGSphere" parent="Ball"]
-
 [node name="LeftBars" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0 )
 script = ExtResource( 8 )
-team_color = Color( 0.0507812, 0.0878601, 1, 1 )
+team_color = Color( 0.0862745, 0.0941176, 0.270588, 1 )
 
 [node name="0" parent="LeftBars" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -63, 0, 0 )
@@ -204,3 +195,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
 
 [node name="Pin3" parent="RightBars/3" instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 8 )
+
+[node name="Ball" type="RigidBody" parent="."]
+transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
+input_ray_pickable = false
+mass = 0.2
+physics_material_override = SubResource( 1 )
+can_sleep = false
+script = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Ball"]
+shape = SubResource( 2 )
+
+[node name="CSGSphere" type="CSGSphere" parent="Ball"]
+material_override = SubResource( 3 )
+use_in_baked_light = true
+calculate_tangents = false
+radius = 1.2

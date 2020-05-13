@@ -6,7 +6,7 @@ extends Spatial
 # var b = "text"
 const UP = Vector3(0, 1, 0)
 const CAMERA_EASING = 0.2
-const LIGHT_EASING = 1.5
+const LIGHT_EASING = 1
 
 var cameras
 var ball

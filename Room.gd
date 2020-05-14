@@ -5,18 +5,21 @@ extends Spatial
 # var a = 2
 # var b = "text"
 const UP = Vector3(0, 1, 0)
-const CAMERA_EASING = 0.2
-const LIGHT_EASING = 1
+const CAMERA_LOOK_EASING = 0.4
+const CAMERA_POS_EASING = 0.3
+const LIGHT_EASING = 2
 
-var cameras
+var camera
+var camera_original_position
 var ball
 var lights = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cameras = [$CameraLeft]
+	camera = $CameraLeft
+	camera_original_position = camera.translation
 	ball = $Table/Ball
-	lights = [$SpotLight1, $SpotLight2, $SpotLight3, $SpotLight4]
+	lights = $Spotlights.get_children()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -26,13 +29,15 @@ func _process(delta):
 		$Table/GoalLeft/ScoreDetector.score = 0
 		$Table/GoalRight/ScoreDetector.score = 0
 
-	var target
-	target = ball.translation * CAMERA_EASING
-	for camera in cameras:
-		camera.look_at(target, UP)
+	var distance = (camera.translation - ball.translation).length()
+	camera.translation = Vector3(
+		ball.translation.x * CAMERA_POS_EASING,
+		camera_original_position.y + distance * CAMERA_POS_EASING,
+		camera_original_position.z + ball.translation.z * CAMERA_POS_EASING * 0.5
+		)
+	camera.look_at(ball.translation * CAMERA_LOOK_EASING, UP)
 	
-	target = ball.translation * LIGHT_EASING
 	for light in lights:
-		light.look_at(target, UP)
+		light.look_at(ball.translation + ball.linear_velocity * delta * LIGHT_EASING, UP)
 	
 	$Score.text = str($Table/GoalLeft/ScoreDetector.score) + " - " + str($Table/GoalRight/ScoreDetector.score)

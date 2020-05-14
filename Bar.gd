@@ -1,10 +1,5 @@
 extends KinematicBody
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
 export var max_sway = 15
 export var sway_speed = 100
 
@@ -17,21 +12,33 @@ export var ROTATE_AXIS = [JOY_ANALOG_LX, JOY_ANALOG_RX]
 export var invert = 1
 
 export var joy = 0
-export var analog = 0
-
-export var active = false
+export var analog = -1
 
 var sway = 0
 var rotate = 0
 
+export var inactive_material: SpatialMaterial = SpatialMaterial.new()
+export var active_material_analog_0: SpatialMaterial = SpatialMaterial.new()
+export var active_material_analog_1: SpatialMaterial = SpatialMaterial.new()
+
+var active_materials
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$CSGCylinder.material = inactive_material
+	active_materials = [active_material_analog_0, active_material_analog_1]
 
+func activate(_analog):
+	analog = _analog
+	$CSGCylinder.material = active_materials[_analog]
+
+func deactivate()	:
+	analog = -1
+	$CSGCylinder.material = inactive_material
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not active:
+	if analog < 0:
 		return
 	var sway_input = invert * Input.get_joy_axis(joy, SWAY_AXIS[analog])
 	var sway_target = clamp(sway + sway_input * delta * sway_speed, -max_sway, max_sway)

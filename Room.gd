@@ -14,15 +14,17 @@ var lights = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cameras = [$CameraLeft, $CameraRight]
+	cameras = [$CameraLeft]
 	ball = $Table/Ball
-	lights = [$SpotLight1, $SpotLight2, $SpotLight3]
+	lights = [$SpotLight1, $SpotLight2, $SpotLight3, $SpotLight4]
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_key_pressed(KEY_SPACE):
-		get_tree().reload_current_scene()
+		$Table/Ball.reset()
+		$Table/GoalLeft/ScoreDetector.score = 0
+		$Table/GoalRight/ScoreDetector.score = 0
 
 	var target
 	target = ball.translation * CAMERA_EASING
@@ -33,3 +35,4 @@ func _process(delta):
 	for light in lights:
 		light.look_at(target, UP)
 	
+	$Score.text = str($Table/GoalLeft/ScoreDetector.score) + " - " + str($Table/GoalRight/ScoreDetector.score)

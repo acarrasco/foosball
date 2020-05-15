@@ -17,8 +17,9 @@ func _ready():
 		bars = [$"3", $"2", $"1", $"0"]
 	else:
 		bars = [$"0", $"1", $"2", $"3"]
-	
-	
+	assign_team_color()
+
+func assign_team_color():
 	var material = SpatialMaterial.new()
 	material.albedo_color = team_color
 	material.roughness = 0.2
@@ -26,8 +27,7 @@ func _ready():
 	for bar in bars:
 		for child in bar.get_children():
 			if child is KinematicBody:
-				child.get_node("Mesh").set_surface_material(0, material)
-
+				child.get_node("Mesh").set_surface_material(0, material)	
 
 func switch_bar(index, just_pressed, direction_left, direction_right, analog):
 	var change = 0

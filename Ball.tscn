@@ -36,7 +36,30 @@ use_in_baked_light = true
 calculate_tangents = false
 radius = 1.2
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="StreamPlayers" type="Node" parent="."]
+
+[node name="1" type="AudioStreamPlayer3D" parent="StreamPlayers"]
+transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
 stream = ExtResource( 2 )
-pitch_scale = 0.53
+max_db = 6.0
+
+[node name="2" type="AudioStreamPlayer3D" parent="StreamPlayers"]
+transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
+stream = ExtResource( 2 )
+max_db = 6.0
+
+[node name="3" type="AudioStreamPlayer3D" parent="StreamPlayers"]
+transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
+stream = ExtResource( 2 )
+max_db = 6.0
+
+[node name="4" type="AudioStreamPlayer3D" parent="StreamPlayers"]
+transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
+stream = ExtResource( 2 )
+max_db = 6.0
+
+[node name="5" type="AudioStreamPlayer3D" parent="StreamPlayers"]
+transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -0.360352, 5.1361, -0.105382 )
+stream = ExtResource( 2 )
+max_db = 6.0
 [connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]

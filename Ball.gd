@@ -28,11 +28,24 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if translation.y < BOTTOM_LIMIT:
+		reset()
+
 	if (Input.is_joy_button_pressed(0, JOY_L3) or
 		Input.is_joy_button_pressed(0, JOY_R3) or
 		Input.is_joy_button_pressed(1, JOY_L3) or
 		Input.is_joy_button_pressed(1, JOY_R3)):
 		nudge()
 
-	if translation.y < BOTTOM_LIMIT:
-		reset()
+	if Input.get_mouse_button_mask() & 1:
+		var viewport = get_viewport()
+		var camera = viewport.get_camera()
+		var mouse_position = viewport.get_mouse_position()
+		var field_plane = Plane(0, 1, 0, 0)
+		var target = field_plane.intersects_ray(
+			camera.project_ray_origin(mouse_position),
+			camera.project_ray_normal(mouse_position)
+		)
+		apply_central_impulse(delta * (target - translation))
+
+

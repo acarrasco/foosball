@@ -9,6 +9,9 @@ const NUDGE_LIMIT = 5
 const NUDGE_SPEED = 4
 
 const BOTTOM_LIMIT = -100
+const MAX_STRENGTH = 200
+
+var previous_velocity = Vector3(0, 0, 0)
 
 # Called when the node enters the scene tree for the first time.
 func nudge():
@@ -28,6 +31,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	previous_velocity = linear_velocity
 	if translation.y < BOTTOM_LIMIT:
 		reset()
 
@@ -49,3 +53,9 @@ func _process(delta):
 		apply_central_impulse(delta * (target - translation))
 
 
+func _on_Ball_body_entered(body):
+	var strength = min((linear_velocity - previous_velocity).length(), MAX_STRENGTH)
+	if strength > 15:
+		$AudioStreamPlayer3D.unit_db = log(strength)
+		$AudioStreamPlayer3D.pitch_scale = 0.7 + 0.3 * (strength / MAX_STRENGTH)
+		$AudioStreamPlayer3D.play()

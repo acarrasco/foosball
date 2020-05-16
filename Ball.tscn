@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Ball.gd" type="Script" id=1]
+[ext_resource path="res://sounds/hit.wav" type="AudioStream" id=2]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.8
@@ -21,6 +22,8 @@ transform = Transform( 0.152089, 0.988367, 0, -0.988367, 0.152089, 0, 0, 0, 1, -
 input_capture_on_drag = true
 mass = 0.2
 physics_material_override = SubResource( 1 )
+contacts_reported = 5
+contact_monitor = true
 can_sleep = false
 script = ExtResource( 1 )
 
@@ -32,3 +35,8 @@ material_override = SubResource( 3 )
 use_in_baked_light = true
 calculate_tangents = false
 radius = 1.2
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 2 )
+pitch_scale = 0.53
+[connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]

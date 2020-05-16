@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/411789__inspectorj__door-wooden-close-a-h6-ms.wav-cfb62cb8b01356388db5fd1ce9f5366c.sample"
+
+[deps]
+
+source_file="res://sounds/411789__inspectorj__door-wooden-close-a-h6-ms.wav"
+dest_files=[ "res://.import/411789__inspectorj__door-wooden-close-a-h6-ms.wav-cfb62cb8b01356388db5fd1ce9f5366c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -74,5 +74,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485, -5, 0 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ScoreDetector"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
 shape = SubResource( 5 )
 [connection signal="body_entered" from="ScoreDetector" to="ScoreDetector" method="_on_ScoreDetector_body_entered"]

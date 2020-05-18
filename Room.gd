@@ -20,7 +20,11 @@ func _ready():
 	camera_original_position = camera.translation
 	ball = $Table/Ball
 	lights = $Spotlights.get_children()
-
+	$Table/GoalLeft/ScoreDetector.connect("score_changed", self, "update_scoreboard")
+	$Table/GoalRight/ScoreDetector.connect("score_changed", self, "update_scoreboard")
+	
+func update_scoreboard(_score):
+	$ScoreBoard.text = str($Table/GoalLeft/ScoreDetector.score) + " - " + str($Table/GoalRight/ScoreDetector.score)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -40,4 +44,4 @@ func _process(delta):
 	for light in lights:
 		light.look_at(ball.translation + ball.linear_velocity * delta * LIGHT_EASING, UP)
 	
-	$Score.text = str($Table/GoalLeft/ScoreDetector.score) + " - " + str($Table/GoalRight/ScoreDetector.score)
+	

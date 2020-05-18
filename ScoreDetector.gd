@@ -1,11 +1,14 @@
 extends Area
 
-export var score = 0
+signal score_changed(score)
 
-func _ready():
-	pass # Replace with function body.
+export var score = 0 setget _set_score
+
+func _set_score(new_score):
+	score = new_score
+	emit_signal("score_changed", score)
 
 func _on_ScoreDetector_body_entered(body):
 	if body.has_method("reset"):
-		score += 1
+		_set_score(score + 1)
 		body.reset()

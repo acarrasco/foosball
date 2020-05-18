@@ -14,7 +14,7 @@ fov = 60.0
 near = 1.0
 far = 500.0
 
-[node name="Score" type="Label" parent="."]
+[node name="ScoreBoard" type="Label" parent="."]
 anchor_left = 0.5
 anchor_right = 0.5
 margin_top = 20.0

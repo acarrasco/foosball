@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://meshes/hand.obj" type="ArrayMesh" id=1]
+
+[node name="Hand" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 0.174833, 1.99234, 0, -0.719573, 0.0631443, 1.865, 1.85786, -0.163032, 0.722338, 0, 0, 0.016511 )
+mesh = ExtResource( 1 )
+material/0 = null

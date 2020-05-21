@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pin.obj-f1de5a9da9682055dacd63766f0cf721.mesh"
+
+[deps]
+
+files=[ "res://.import/pin.obj-f1de5a9da9682055dacd63766f0cf721.mesh" ]
+
+source_file="res://meshes/pin.obj"
+dest_files=[ "res://.import/pin.obj-f1de5a9da9682055dacd63766f0cf721.mesh", "res://.import/pin.obj-f1de5a9da9682055dacd63766f0cf721.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

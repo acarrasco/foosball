@@ -23,19 +23,29 @@ export var active_material_analog_0: SpatialMaterial = SpatialMaterial.new()
 export var active_material_analog_1: SpatialMaterial = SpatialMaterial.new()
 
 var active_materials
+var hands
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$CSGCylinder.material = inactive_material
 	active_materials = [active_material_analog_0, active_material_analog_1]
+	if invert == -1:
+		hands = [$RightHand, $LeftHand]
+	else:
+		hands = [$LeftHand, $RightHand]
 
 func activate(_analog):
 	analog = _analog
 	$CSGCylinder.material = active_materials[_analog]
+	for hand in hands:
+		hand.visible = false
+	hands[analog].visible = true
 
 func deactivate()	:
 	analog = -1
 	$CSGCylinder.material = inactive_material
+	for hand in hands:
+		hand.visible = false
 
 func move(delta):
 	var sway_input = invert * Input.get_joy_axis(joy, SWAY_AXIS[analog])

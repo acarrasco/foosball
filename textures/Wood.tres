@@ -1,0 +1,10 @@
+[gd_resource type="SpatialMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://textures/wood.jpg" type="Texture" id=1]
+
+[resource]
+albedo_color = Color( 0.588235, 0.588235, 0.588235, 1 )
+albedo_texture = ExtResource( 1 )
+roughness = 0.85
+uv1_scale = Vector3( 0.04, 0.04, 0.04 )
+uv1_triplanar = true

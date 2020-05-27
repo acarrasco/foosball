@@ -1,79 +1,65 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Wood.tres" type="Material" id=1]
+[ext_resource path="res://textures/Wood.tres" type="Material" id=1]
 [ext_resource path="res://ScoreDetector.gd" type="Script" id=2]
 
-[sub_resource type="SpatialMaterial" id=1]
 
-[sub_resource type="BoxShape" id=2]
-extents = Vector3( 5, 15, 17.5 )
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 12, 5, 14 )
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 5, 5, 12.5 )
-
-[sub_resource type="BoxShape" id=4]
-extents = Vector3( 5, 15, 45 )
-
-[sub_resource type="BoxShape" id=5]
-extents = Vector3( 5, 5, 12.5 )
+[sub_resource type="SpatialMaterial" id=2]
 
 [node name="Goal" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.757855, 0, 0 )
 
-[node name="StaticBody" type="StaticBody" parent="."]
-
-[node name="CSGCombiner" type="CSGCombiner" parent="StaticBody"]
-operation = 2
-
-[node name="Wall" type="CSGBox" parent="StaticBody/CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
-width = 10.0
-height = 30.0
-depth = 95.0
-material = ExtResource( 1 )
-
-[node name="Frame" type="CSGBox" parent="StaticBody/CSGCombiner/Wall"]
-width = 10.2
-height = 14.0
-depth = 27.0
-material = SubResource( 1 )
-
-[node name="Hole" type="CSGBox" parent="StaticBody/CSGCombiner/Wall"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
-operation = 2
-width = 14.0
-height = 16.0
-depth = 25.0
-material = ExtResource( 1 )
-
-[node name="Back" type="CSGBox" parent="StaticBody/CSGCombiner"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 5, 0 )
-width = 1.0
-height = 30.0
-depth = 95.0
-material = ExtResource( 1 )
-
-[node name="Left" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 30 )
-shape = SubResource( 2 )
-
-[node name="Right" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -30 )
-shape = SubResource( 2 )
-
-[node name="Top" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
-shape = SubResource( 3 )
-
-[node name="Back" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 0 )
-shape = SubResource( 4 )
-
 [node name="ScoreDetector" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.485, -5, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -8, 0 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="ScoreDetector"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4, 0 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+operation = 2
+use_collision = true
+
+[node name="Wall" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3, 0 )
+width = 20.0
+height = 40.0
+depth = 88.0
+material = ExtResource( 1 )
+
+[node name="Frame" type="CSGBox" parent="CSGCombiner/Wall"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 4, 0 )
+width = 1.0
+height = 14.0
+depth = 27.0
+material = SubResource( 2 )
+
+[node name="Cutoff" type="CSGBox" parent="CSGCombiner/Wall"]
+transform = Transform( 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -12, 20, 0 )
+operation = 2
+width = 20.0
+height = 16.0
+depth = 100.0
+material = ExtResource( 1 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="CSGCombiner/Wall"]
+operation = 2
+
+[node name="Hole" type="CSGBox" parent="CSGCombiner/Wall/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+operation = 2
+width = 14.0
+height = 20.0
+depth = 25.0
+material = ExtResource( 1 )
+
+[node name="Hole2" type="CSGBox" parent="CSGCombiner/Wall/CSGCombiner"]
+transform = Transform( 0.984808, 0.173648, 0, -0.173648, 0.984808, 0, 0, 0, 1, 2.74813, -1.14451, 0 )
+width = 15.1439
+height = 20.0
+depth = 25.0
+material = ExtResource( 1 )
 [connection signal="body_entered" from="ScoreDetector" to="ScoreDetector" method="_on_ScoreDetector_body_entered"]

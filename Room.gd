@@ -6,8 +6,8 @@ extends Spatial
 # var b = "text"
 const UP = Vector3(0, 1, 0)
 const CAMERA_LOOK_EASING = 0.4
-const CAMERA_POS_EASING = 0.3
-const LIGHT_EASING = 2
+const CAMERA_POS_EASING = 0.4
+const LIGHT_EASING = 0.9
 
 var camera
 var camera_original_position
@@ -33,15 +33,15 @@ func _process(delta):
 		$Table/GoalLeft/ScoreDetector.score = 0
 		$Table/GoalRight/ScoreDetector.score = 0
 
-	var distance = (camera.translation - ball.translation).length()
+	var distance = ball.translation.length()
 	camera.translation = Vector3(
-		ball.translation.x * CAMERA_POS_EASING,
+		camera_original_position.x + ball.translation.x * CAMERA_POS_EASING,
 		camera_original_position.y + distance * CAMERA_POS_EASING,
-		camera_original_position.z + ball.translation.z * CAMERA_POS_EASING * 0.5
+		camera_original_position.z + ball.translation.z * CAMERA_POS_EASING
 		)
 	camera.look_at(ball.translation * CAMERA_LOOK_EASING, UP)
 	
 	for light in lights:
-		light.look_at(ball.translation + ball.linear_velocity * delta * LIGHT_EASING, UP)
+		light.look_at((ball.translation + ball.linear_velocity * delta) * LIGHT_EASING, UP)
 	
 	

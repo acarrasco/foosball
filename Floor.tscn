@@ -1,32 +1,24 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://field.png" type="Texture" id=1]
-
-[sub_resource type="PhysicsMaterial" id=1]
-friction = 0.8
-rough = true
+[ext_resource path="res://textures/field.png" type="Texture" id=1]
+[ext_resource path="res://meshes/floor.obj" type="ArrayMesh" id=2]
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.054902, 0.576471, 0.803922, 1 )
+albedo_color = Color( 0.411765, 0.54902, 0.537255, 1 )
 albedo_texture = ExtResource( 1 )
 metallic = 0.5
-roughness = 0.1
+roughness = 0.7
 
-[sub_resource type="BoxShape" id=3]
-extents = Vector3( 70, 5, 42.5 )
+[sub_resource type="ConcavePolygonShape" id=1]
+data = PoolVector3Array( 70, -0.5, -42.5, 70, -0.5, 42.5, 70, 0.5, 38.0601, 70, 2.0263, -42.5, -70, -0.5, -42.5, 70, -0.5, -42.5, -70, -0.5, -42.5, 70, -0.5, 42.5, 70, -0.5, -42.5, -70, -0.5, 42.5, -70, -0.5, -42.5, -70, 0.5, -38.0601, 68.3194, 0.5, -40.0144, -70, 2.0263, -42.5, 70, 2.0263, -42.5, 70, -0.5, 42.5, -70, 2.0263, 42.5, 70, 2.0263, 42.5, -70, 2.0263, 42.5, 68.3194, 0.5, 40.0144, 70, 2.0263, 42.5, -68.3194, 0.5, -40.0144, 70, 0.5, -38.0601, -70, 0.5, -38.0601, -70, 2.0263, -42.5, -68.3194, 0.5, -40.0144, -70, 0.5, -38.0601, -68.3194, 0.5, 40.0144, -70, 0.5, 38.0601, -70, 2.0263, 42.5, 70, 0.5, 38.0601, 68.3194, 0.5, 40.0144, 70, 2.0263, 42.5, 68.3194, 0.5, -40.0144, 70, 0.5, -38.0601, 70, 2.0263, -42.5, 70, 2.0263, -42.5, 70, -0.5, -42.5, 70, 0.5, -38.0601, 70, 2.0263, 42.5, 70, 0.5, 38.0601, 70, -0.5, 42.5, 70, 0.5, -38.0601, 70, -0.5, -42.5, 70, 0.5, 38.0601, -70, 2.0263, -42.5, -70, -0.5, -42.5, 70, 2.0263, -42.5, -70, -0.5, 42.5, 70, -0.5, 42.5, -70, -0.5, -42.5, -70, 2.0263, 42.5, -70, -0.5, 42.5, -70, 0.5, 38.0601, -70, 2.0263, -42.5, -70, 0.5, -38.0601, -70, -0.5, -42.5, -70, 0.5, 38.0601, -70, -0.5, 42.5, -70, 0.5, -38.0601, -68.3194, 0.5, -40.0144, -70, 2.0263, -42.5, 68.3194, 0.5, -40.0144, -70, -0.5, 42.5, -70, 2.0263, 42.5, 70, -0.5, 42.5, -68.3194, 0.5, 40.0144, 68.3194, 0.5, 40.0144, -70, 2.0263, 42.5, 70, 2.0263, 42.5, 68.3194, 0.5, 40.0144, 70, 0.5, 38.0601, 70, 2.0263, -42.5, 70, 0.5, -38.0601, 68.3194, 0.5, -40.0144, 70, 0.5, 38.0601, 68.3194, 0.5, 40.0144, -68.3194, 0.5, 40.0144, 70, 0.5, -38.0601, 70, 0.5, 38.0601, -70, 0.5, 38.0601, 70, 0.5, 38.0601, -68.3194, 0.5, 40.0144, -70, 0.5, 38.0601, -70, 2.0263, 42.5, -70, 0.5, 38.0601, -68.3194, 0.5, 40.0144, 68.3194, 0.5, -40.0144, 70, 0.5, -38.0601, -68.3194, 0.5, -40.0144, -70, 2.0263, -42.5, -68.3194, 0.5, -40.0144, -70, 0.5, -38.0601, -70, 0.5, 38.0601, -70, 0.5, -38.0601, 70, 0.5, -38.0601 )
 
 [node name="Floor" type="Spatial"]
 
-[node name="StaticBody" type="StaticBody" parent="."]
-physics_material_override = SubResource( 1 )
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 2 )
+material/0 = SubResource( 2 )
 
-[node name="CSGBox" type="CSGBox" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
-width = 140.0
-height = 10.0
-depth = 85.0
-material = SubResource( 2 )
+[node name="StaticBody" type="StaticBody" parent="MeshInstance"]
 
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0 )
-shape = SubResource( 3 )
+[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody"]
+shape = SubResource( 1 )

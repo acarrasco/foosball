@@ -19,8 +19,13 @@ config/name="Foosball"
 run/main_scene="res://Room.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/vsync/vsync_via_compositor=true
+
 [physics]
 
+3d/active_soft_world=false
 3d/default_gravity=98.0
 
 [rendering]

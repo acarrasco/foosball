@@ -50,8 +50,7 @@ func switch_bar(index, just_pressed, direction_left, direction_right, analog):
 	
 	return [new_index, just_pressed]
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	var result
 	
 	result = switch_bar(left_analog_bar, just_pressed_dpad, JOY_DPAD_LEFT, JOY_DPAD_RIGHT, 0)

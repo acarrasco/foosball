@@ -8,15 +8,17 @@ extends RigidBody
 const NUDGE_LIMIT = 5
 const NUDGE_SPEED = 4
 
-const BOTTOM_LIMIT = -100
+const BOTTOM_LIMIT = -85
 const MAX_STRENGTH = 4000
 
 var previous_velocity = Vector3(0, 0, 0)
+var current_velocity = Vector3(0, 0, 0)
 
 var streams = []
 var current_stream = 0
 
-# Called when the node enters the scene tree for the first time.
+var reset_request = false
+
 func nudge():
 	var v = Vector2(linear_velocity.x, linear_velocity.z).length()
 	if (v < NUDGE_LIMIT):
@@ -25,17 +27,27 @@ func nudge():
 		apply_central_impulse(Vector3(x, 0, z))
 
 func reset():
+	reset_request = true
+
+func _reset():
+	reset_request = false
 	translation = Vector3(0, 10, 0)
 	linear_velocity = Vector3(0, 0, 0)
+	#angular_velocity = Vector3(0, 0, 0)
 	nudge()
 
 func _ready():
 	streams = $StreamPlayers.get_children()
 	nudge()
 
+func _physics_process(_delta):
+	if reset_request:
+		_reset()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	previous_velocity = linear_velocity
+	previous_velocity = current_velocity
+	current_velocity = linear_velocity
 	if translation.y < BOTTOM_LIMIT:
 		reset()
 
@@ -57,7 +69,7 @@ func _process(delta):
 		apply_central_impulse(delta * (target - translation))
 
 
-func _on_Ball_body_entered(body):
+func _on_Ball_body_entered(_body):
 	var velocity_diff = (linear_velocity - previous_velocity).length()
 	var strength = min(velocity_diff * velocity_diff, MAX_STRENGTH)
 	if strength > 80:

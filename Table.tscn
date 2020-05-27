@@ -3,7 +3,7 @@
 [ext_resource path="res://Side.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Floor.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Goal.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Wood.tres" type="Material" id=4]
+[ext_resource path="res://textures/Wood.tres" type="Material" id=4]
 [ext_resource path="res://Bar.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Ball.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Pin.tscn" type="PackedScene" id=7]
@@ -17,13 +17,13 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 45 )
 
 [node name="FarSide" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -45 )
-
-[node name="GoalLeft" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 0, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, -45 )
 
 [node name="GoalRight" parent="." instance=ExtResource( 3 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -75, 0, 0 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 70, 0, 0 )
+
+[node name="GoalLeft" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -70, 0, 0 )
 
 [node name="Legs" type="Spatial" parent="."]
 
@@ -77,7 +77,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
 
 [node name="2" parent="LeftBars" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0 )
-max_sway = 25
+max_sway = 22
 SWAY_AXIS = [ 1, 2 ]
 ROTATE_AXIS = [ 0, 3 ]
 
@@ -137,7 +137,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7 )
 
 [node name="2" parent="RightBars" instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, 0 )
-max_sway = 25
+max_sway = 22
 invert = -1
 joy = 1
 

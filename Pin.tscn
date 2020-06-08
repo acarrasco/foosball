@@ -2,7 +2,6 @@
 
 [ext_resource path="res://meshes/pin.obj" type="ArrayMesh" id=1]
 
-
 [sub_resource type="SpatialMaterial" id=1]
 
 [sub_resource type="ConvexPolygonShape" id=2]
@@ -15,21 +14,20 @@ points = PoolVector3Array( -1.4096, -2.15142, -0.224372, -1.39278, -1.67647, 0.2
 points = PoolVector3Array( -0.952077, -7.1435, 0.518824, -0.948548, -8.80185, 0.517003, -0.948551, -7.14646, -0.525306, -0.945205, -8.79883, -0.523364, -0.828897, -7.02038, 0.518885, -0.828844, -7.14345, 0.64201, -0.825824, -7.0238, -0.525372, -0.825725, -7.14646, -0.648133, -0.825683, -8.92474, 0.51698, -0.822811, -8.79883, -0.645758, -0.822773, -8.92129, -0.523338, -0.763233, -8.73926, 0.7, -0.763233, -7.20914, 0.7, -0.575955, -6.97, 0.0872991, -0.454259, -6.97, -0.216878, 0.032339, -6.97, 0.330667, 0.336671, -6.97, -0.277687, 0.397611, -6.97, 0.269858, 0.519307, -6.97, -0.156068, 0.76734, -8.73926, 0.7, 0.76734, -7.20914, 0.7, 0.777909, -8.9367, -0.532004, 0.777964, -8.81233, -0.65637, 0.828311, -8.92298, 0.516104, 0.828353, -7.14788, -0.646928, 0.828398, -8.80036, 0.638637, 0.828453, -7.02544, -0.524387, 0.831485, -7.02207, 0.517985, 0.836275, -8.93242, -0.467843, 0.841256, -8.75158, -0.657444, 0.950957, -8.80032, 0.516127, 0.950961, -7.14788, -0.524321, 0.95444, -7.14496, 0.517924, 0.960116, -8.80858, -0.467873, 0.965778, -8.75158, -0.532922 )
 
 [node name="Pin" type="KinematicBody"]
-input_ray_pickable = false
 
 [node name="Mesh" type="MeshInstance" parent="."]
 transform = Transform( -1.95505e-07, 0, 1.2, 0, 1.2, 0, -1.2, 0, -1.95505e-07, 0, 3, 0 )
 mesh = ExtResource( 1 )
 material/0 = SubResource( 1 )
 
-[node name="CollisionShape3" type="CollisionShape" parent="."]
+[node name="Head" type="CollisionShape" parent="."]
 transform = Transform( -1.95505e-07, 0, 1.2, 0, 1.2, 0, -1.2, 0, -1.95505e-07, 0, 3, 0 )
 shape = SubResource( 2 )
 
-[node name="CollisionShape2" type="CollisionShape" parent="."]
+[node name="Body" type="CollisionShape" parent="."]
 transform = Transform( -1.95505e-07, 0, 1.2, 0, 1.2, 0, -1.2, 0, -1.95505e-07, 0, 3, 0 )
 shape = SubResource( 3 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
+[node name="Feet" type="CollisionShape" parent="."]
 transform = Transform( -1.95505e-07, 0, 1.2, 0, 1.2, 0, -1.2, 0, -1.95505e-07, 0, 3, 0 )
 shape = SubResource( 4 )

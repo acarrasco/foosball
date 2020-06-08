@@ -63,7 +63,7 @@ func spin(delta):
 	rotate += rotate_diff
 	rotate_z(rotate_diff)
 
-func _process(delta):
+func _physics_process(delta):
 	if analog < 0:
 		return
 	move(delta)

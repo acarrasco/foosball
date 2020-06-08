@@ -5,8 +5,9 @@ extends Spatial
 # var a = 2
 # var b = "text"
 const UP = Vector3(0, 1, 0)
+const FRONT = Vector3(0, 0.6, -1)
 const CAMERA_LOOK_EASING = 0.4
-const CAMERA_POS_EASING = 0.4
+const CAMERA_POS_EASING = 0.5
 const LIGHT_EASING = 0.9
 
 var camera
@@ -28,6 +29,10 @@ func update_scoreboard(_score):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	if Input.is_action_pressed("ui_cancel"):
+		get_tree().change_scene("res://Menu.tscn")
+	
 	if Input.is_key_pressed(KEY_SPACE):
 		$Table/Ball.reset()
 		$Table/GoalLeft/ScoreDetector.score = 0
@@ -36,10 +41,10 @@ func _process(delta):
 	var distance = ball.translation.length()
 	camera.translation = Vector3(
 		camera_original_position.x + ball.translation.x * CAMERA_POS_EASING,
-		camera_original_position.y + distance * CAMERA_POS_EASING,
+		camera_original_position.y + distance * 0.5 * CAMERA_POS_EASING,
 		camera_original_position.z + ball.translation.z * CAMERA_POS_EASING
 		)
-	camera.look_at(ball.translation * CAMERA_LOOK_EASING, UP)
+	camera.look_at(ball.translation * CAMERA_LOOK_EASING, FRONT)
 	
 	for light in lights:
 		light.look_at((ball.translation + ball.linear_velocity * delta) * LIGHT_EASING, UP)

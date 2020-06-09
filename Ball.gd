@@ -57,7 +57,7 @@ func _process(delta):
 		Input.is_joy_button_pressed(1, JOY_R3)):
 		nudge()
 
-	if Input.get_mouse_button_mask() & 1:
+	if Input.get_mouse_button_mask() & 1 and not get_tree().paused:
 		var viewport = get_viewport()
 		var camera = viewport.get_camera()
 		var mouse_position = viewport.get_mouse_position()

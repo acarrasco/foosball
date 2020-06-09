@@ -17,7 +17,7 @@ var lights = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	camera = $CameraLeft
+	camera = $Camera
 	camera_original_position = camera.translation
 	ball = $Table/Ball
 	lights = $Spotlights.get_children()
@@ -25,19 +25,15 @@ func _ready():
 	$Table/GoalRight/ScoreDetector.connect("score_changed", self, "update_scoreboard")
 	
 func update_scoreboard(_score):
-	$ScoreBoard.text = str($Table/GoalLeft/ScoreDetector.score) + " - " + str($Table/GoalRight/ScoreDetector.score)
+	$ScoreBoard.text = str($Table/GoalRight/ScoreDetector.score) + " - " + str($Table/GoalLeft/ScoreDetector.score)
+
+func reset():
+	$Table/Ball.reset()
+	$Table/GoalLeft/ScoreDetector.score = 0
+	$Table/GoalRight/ScoreDetector.score = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
-	if Input.is_action_pressed("ui_cancel"):
-		get_tree().change_scene("res://Menu.tscn")
-	
-	if Input.is_key_pressed(KEY_SPACE):
-		$Table/Ball.reset()
-		$Table/GoalLeft/ScoreDetector.score = 0
-		$Table/GoalRight/ScoreDetector.score = 0
-
 	var distance = ball.translation.length()
 	camera.translation = Vector3(
 		camera_original_position.x + ball.translation.x * CAMERA_POS_EASING,

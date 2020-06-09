@@ -25,15 +25,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8"
-     inkscape:cx="75.524728"
-     inkscape:cy="71.831778"
+     inkscape:zoom="5.6"
+     inkscape:cx="19.331731"
+     inkscape:cy="35.144308"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
-     inkscape:window-width="3440"
-     inkscape:window-height="1412"
-     inkscape:window-x="2560"
+     inkscape:window-width="2560"
+     inkscape:window-height="1380"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      fit-margin-top="2"
@@ -89,6 +89,47 @@
          d="m 51.268382,21.485594 q 0,0.656166 -0.465667,1.121833 -0.465666,0.465667 -1.121833,0.465667 h -0.275167 q -0.656166,0 -1.121833,-0.465667 -0.465667,-0.465667 -0.465667,-1.121833 v -1.926167 q 0,-0.656167 0.465667,-1.121833 0.465667,-0.465667 1.121833,-0.465667 h 0.275167 q 0.656167,0 1.121833,0.465667 0.465667,0.465666 0.465667,1.121833 v 1.4605 h -2.391833 v 0.179917 q 0,0.497416 0.22225,0.6985 0.22225,0.201083 0.73025,0.201083 0.28575,0 0.391583,-0.613833 z M 50.210049,20.14151 v -0.338666 q 0,-0.889 -0.687917,-0.889 -0.645583,0 -0.645583,0.889 v 0.328083 z"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332"
          id="path9321" />
+    </g>
+    <g
+       id="g4766"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;line-height:1.25;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       aria-label="New Game"
+       transform="translate(-0.52916667,-0.52916667)">
+      <path
+         id="path4752"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 20.229284,22.96726 h -1.121833 l -1.121833,-3.7465 0.01058,3.7465 h -1.016 l -0.03175,-6.868583 h 1.100667 l 1.164166,3.8735 0.01058,-3.8735 h 0.994833 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4754"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 24.313955,21.485594 q 0,0.656166 -0.465667,1.121833 -0.465667,0.465667 -1.121833,0.465667 h -0.275167 q -0.656167,0 -1.121833,-0.465667 -0.465667,-0.465667 -0.465667,-1.121833 v -1.926167 q 0,-0.656167 0.465667,-1.121833 0.465666,-0.465667 1.121833,-0.465667 h 0.275167 q 0.656166,0 1.121833,0.465667 0.465667,0.465666 0.465667,1.121833 v 1.4605 h -2.391834 v 0.179917 q 0,0.497416 0.22225,0.6985 0.22225,0.201083 0.73025,0.201083 0.28575,0 0.391584,-0.613833 z M 23.255621,20.14151 v -0.338666 q 0,-0.889 -0.687916,-0.889 -0.645584,0 -0.645584,0.889 v 0.328083 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4756"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 30.759204,17.897844 -1.217083,5.08 -1.132416,-0.01058 -0.635,-2.783416 -0.677334,2.794 -1.132416,-0.01058 -1.17475,-5.069416 h 1.100666 l 0.645584,3.386666 0.677333,-3.386666 h 1.100667 l 0.66675,3.386666 0.677333,-3.386666 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4758"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 36.727378,20.04626 -0.01058,1.439334 q 0,0.656166 -0.465667,1.121833 -0.465667,0.465667 -1.121833,0.465667 h -0.275167 q -0.656167,0 -1.121833,-0.465667 -0.465667,-0.465667 -0.465667,-1.121833 v -3.937 q 0,-0.656167 0.465667,-1.121833 0.465666,-0.465667 1.121833,-0.465667 h 0.275167 q 0.656166,0 1.121833,0.465667 0.465667,0.465666 0.465667,1.121833 v 1.090083 h -1.058334 q 0,-0.0635 0.01058,-0.22225 0,-0.137583 0,-0.22225 0,-0.5715 -0.08467,-0.836083 -0.15875,-0.455083 -0.613833,-0.455083 -0.645584,0 -0.645584,0.889 v 3.407833 q 0,0.889 0.687917,0.889 0.433917,0 0.5715,-0.328084 0.07408,-0.1905 0.07408,-0.709083 h -0.73025 v -0.994833 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4760"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 40.792369,22.96726 h -1.058333 v -0.359833 q -0.02117,0.465667 -0.910166,0.465667 -0.613834,0 -1.121834,-0.402167 -0.53975,-0.433917 -0.53975,-1.026583 0,-0.381 0.211667,-0.762 0.211667,-0.391584 0.518583,-0.624417 0.370417,-0.275167 0.98425,-0.275167 0.529167,0 0.85725,0.148167 v -0.28575 q 0,-0.889 -0.687917,-0.889 -0.296333,0 -0.444499,0.15875 -0.105834,0.116417 -0.211667,0.4445 h -1.04775 q 0,-0.656167 0.465667,-1.121833 0.465666,-0.465667 1.121833,-0.465667 h 0.275166 q 0.656167,0 1.121834,0.465667 0.465666,0.465666 0.465666,1.121833 z m -1.058333,-1.471083 q 0,-0.28575 -0.232833,-0.486833 -0.22225,-0.201084 -0.508,-0.201084 -0.28575,0 -0.560917,0.232834 -0.264583,0.22225 -0.264583,0.497416 0,0.275167 0.28575,0.455084 0.254,0.169333 0.53975,0.169333 0.28575,0 0.508,-0.1905 0.232833,-0.201083 0.232833,-0.47625 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4762"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 47.274991,19.453594 -0.01058,3.513666 h -1.037167 l -0.01058,-3.27025 q 0,-0.889 -0.687917,-0.889 -0.28575,0 -0.486833,0.211667 -0.201083,0.201083 -0.201083,0.486833 l -0.01058,3.46075 h -1.04775 l -0.01058,-3.46075 q 0,-0.296333 -0.1905,-0.497416 -0.1905,-0.201084 -0.486833,-0.201084 -0.624417,0 -0.624417,0.60325 l 0.01058,3.556 h -1.11125 l -0.01058,-5.079999 1.100667,0.01058 -0.01058,0.264583 q 0.243417,-0.296333 0.910167,-0.296333 0.254,0 0.592667,0.211667 0.338666,0.201083 0.4445,0.423333 0.179916,-0.232833 0.53975,-0.433917 0.359833,-0.201083 0.635,-0.201083 0.66675,0 1.185333,0.465666 0.518583,0.455084 0.518583,1.121834 z"
+         inkscape:connector-curvature="0" />
+      <path
+         id="path4764"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.58333302px;font-family:'Accidental Presidency';-inkscape-font-specification:'Accidental Presidency, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332;fill:#ffffff"
+         d="m 51.268382,21.485594 q 0,0.656166 -0.465667,1.121833 -0.465666,0.465667 -1.121833,0.465667 h -0.275167 q -0.656166,0 -1.121833,-0.465667 -0.465667,-0.465667 -0.465667,-1.121833 v -1.926167 q 0,-0.656167 0.465667,-1.121833 0.465667,-0.465667 1.121833,-0.465667 h 0.275167 q 0.656167,0 1.121833,0.465667 0.465667,0.465666 0.465667,1.121833 v 1.4605 h -2.391833 v 0.179917 q 0,0.497416 0.22225,0.6985 0.22225,0.201083 0.73025,0.201083 0.28575,0 0.391583,-0.613833 z M 50.210049,20.14151 v -0.338666 q 0,-0.889 -0.687917,-0.889 -0.645583,0 -0.645583,0.889 v 0.328083 z"
+         inkscape:connector-curvature="0" />
     </g>
   </g>
 </svg>

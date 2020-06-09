@@ -16,12 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="VirtualFoos"
-run/main_scene="res://Menu.tscn"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/vsync/vsync_via_compositor=true
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [physics]
 
@@ -34,3 +36,7 @@ vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_clear_color=Color( 0.188235, 0.392157, 0.537255, 1 )
 environment/default_environment="res://default_env.tres"
+
+[stretch]
+
+stretch=true

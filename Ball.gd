@@ -1,3 +1,4 @@
+class_name Ball
 extends RigidBody
 
 
@@ -33,7 +34,7 @@ func _reset():
 	reset_request = false
 	translation = Vector3(0, 10, 0)
 	linear_velocity = Vector3(0, 0, 0)
-	#angular_velocity = Vector3(0, 0, 0)
+	angular_velocity = Vector3(0, 0, 0)
 	nudge()
 
 func _ready():

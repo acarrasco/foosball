@@ -1,6 +1,6 @@
 extends Control
 
-var room: Spatial = null
+var room: Room = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

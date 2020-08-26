@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RigidBody",
+"class": "Ball",
+"language": "GDScript",
+"path": "res://Ball.gd"
+}, {
+"base": "Spatial",
+"class": "Room",
+"language": "GDScript",
+"path": "res://Room.gd"
+} ]
 _global_script_class_icons={
-
+"Ball": "",
+"Room": ""
 }
 
 [application]

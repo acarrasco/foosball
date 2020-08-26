@@ -1,3 +1,4 @@
+class_name Room
 extends Spatial
 
 
